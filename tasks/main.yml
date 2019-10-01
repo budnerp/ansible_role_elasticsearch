@@ -1,0 +1,3 @@
+---
+  - name: ELASTICSEARCH - Import the repository’s GPG key
+    shell: 'rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch'
