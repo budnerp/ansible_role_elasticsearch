@@ -8,8 +8,7 @@ Ansible role for ElasticSearch 6 for CentOS 7
     ```
 - Data stored in the `/var/lib/elasticsearch`
 - Configuration files are located in `/etc/elasticsearch`
-- 
- 
+
 ## Tested on
 
 ## Installation
