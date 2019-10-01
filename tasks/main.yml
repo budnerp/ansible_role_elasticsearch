@@ -1,3 +1,32 @@
 ---
   - name: ELASTICSEARCH - Import the repository’s GPG key
-    shell: 'rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch'
+    rpm_key:
+      key: 'https://artifacts.elastic.co/GPG-KEY-elasticsearch'
+      state: present
+
+  - name: ELASTICSEARCH - Create /etc/yum.repos.d/elasticsearch.repo
+    template:
+      src: etc/yum.repos.d/elasticsearch.repo.j2
+      dest: /etc/yum.repos.d/elasticsearch.repo
+      owner: root
+      group: root
+      mode: 0644
+
+  - name: ELASTICSEARCH - Install ElasticSearch 6.x
+    yum:
+      name:
+        - elasticsearch
+      state: present
+
+  - name: ELASTICSEARCH - Configure by overwriting /etc/elasticsearch/elasticsearch.yml
+    template:
+      src: etc/elasticsearch/elasticsearch.yml.j2
+      dest: /etc/elasticsearch/elasticsearch.yml
+      owner: root
+      group: elasticsearch
+      mode: 0660
+
+  - name: ELASTICSEARCH - start the service
+    service: name=elasticsearch enabled=yes
+    notify:
+        - start elasticsearch
