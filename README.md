@@ -24,6 +24,7 @@ Ansible role for ElasticSearch 6 for CentOS 7
         - ansible_role_elasticsearch
     [...]
     ```
+4. After provisioning you can verify cluster health under: `http://<host>:9200/_cluster/health` 
 
 ## Other links
 
