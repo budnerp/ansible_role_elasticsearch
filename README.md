@@ -2,12 +2,13 @@
 Ansible role for ElasticSearch 6 for CentOS 7
 
 ## What's inside?
-- ElasticSearch 6.x
+- ElasticSearch 6.x on port `9200`
     ```
     sudo /usr/share/elasticsearch/bin/elasticsearch -V
     ```
 - Data stored in the `/var/lib/elasticsearch`
 - Configuration files are located in `/etc/elasticsearch`
+- 
  
 ## Tested on
 
