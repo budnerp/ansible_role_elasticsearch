@@ -29,7 +29,6 @@ Ansible role for ElasticSearch 6 for CentOS 7
 ## Other links
 
 ## TO DO
--[ ] add dependencies 
 -[ ] discover: discovery.zen.* settings
 
 ## License
